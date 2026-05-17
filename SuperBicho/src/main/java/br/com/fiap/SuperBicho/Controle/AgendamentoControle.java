@@ -49,26 +49,26 @@ public class AgendamentoControle {
         if (agendamento.getPet() == null ||
                 agendamento.getPet().getId() == null) {
 
-            throw new RuntimeException("Pet obrigatório");
+            throw new RuntimeException("obrigatorio colocar um pet");
         }
 
         if (agendamento.getClinica() == null ||
                 agendamento.getClinica().getId() == null) {
 
-            throw new RuntimeException("Clínica obrigatória");
+            throw new RuntimeException("obrigatorio colocar uma clinica");
         }
 
         Pet petCompleto =
                 petRepositorio.findById(
                                 agendamento.getPet().getId())
                         .orElseThrow(() ->
-                                new RuntimeException("Pet não encontrado"));
+                                new RuntimeException("o pet nao foi encontrado"));
 
         Clinica clinicaCompleta =
                 clinicaRepositorio.findById(
                                 agendamento.getClinica().getId())
                         .orElseThrow(() ->
-                                new RuntimeException("Clínica não encontrada"));
+                                new RuntimeException("clinica nao foi encontrada"));
 
         agendamento.setPet(petCompleto);
         agendamento.setClinica(clinicaCompleta);
@@ -77,7 +77,7 @@ public class AgendamentoControle {
 
         Historico historico = new Historico();
 
-        historico.setDescricao("Agendamento realizado");
+        historico.setDescricao("o agendamento foi realizado");
         historico.setTipo("AGENDAMENTO");
         historico.setDataRegistro(agendamento.getData());
         historico.setPet(petCompleto);
@@ -107,7 +107,7 @@ public class AgendamentoControle {
                                         agendamentoAtualizado.getPet().getId())
                                 .orElseThrow(() ->
                                         new RuntimeException(
-                                                "Pet não encontrado"));
+                                                "pet nao foi encontrado"));
 
                 agendamento.setPet(petCompleto);
             }
@@ -120,7 +120,7 @@ public class AgendamentoControle {
                                         agendamentoAtualizado.getClinica().getId())
                                 .orElseThrow(() ->
                                         new RuntimeException(
-                                                "Clínica não encontrada"));
+                                                "a clínica nao foi encontrada"));
 
                 agendamento.setClinica(clinicaCompleta);
             }

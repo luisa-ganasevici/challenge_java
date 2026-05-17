@@ -47,7 +47,7 @@ public class HistoricoControle {
         Pet petCompleto =
                 petRepositorio.findById(historico.getPet().getId())
                         .orElseThrow(() ->
-                                new RuntimeException("Pet não encontrado"));
+                                new RuntimeException("pet nao foi encontrado"));
 
         historico.setPet(petCompleto);
 
@@ -74,7 +74,7 @@ public class HistoricoControle {
                                         historicoAtualizado.getPet().getId())
                                 .orElseThrow(() ->
                                         new RuntimeException(
-                                                "Pet não encontrado"));
+                                                "pet nao foi encontrado"));
 
                 historico.setPet(petCompleto);
             }

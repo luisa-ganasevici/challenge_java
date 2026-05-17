@@ -34,7 +34,7 @@ public class PetControle {
     public Pet buscar(@PathVariable Integer id) {
         return petRepositorio.findById(id)
                 .orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet não encontrado"));
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "o pet nao foi encontrado"));
     }
 
     @PostMapping
@@ -42,7 +42,7 @@ public class PetControle {
 
         Tutor tutor = tutorRepositorio.findById(dto.getTutorId())
                 .orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Tutor não encontrado"));
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "o tutor nao foi encontrado"));
 
         Pet pet = new Pet();
         pet.setNome(dto.getNome());
@@ -59,11 +59,11 @@ public class PetControle {
 
         Pet pet = petRepositorio.findById(id)
                 .orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet não encontrado"));
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Po pet nao foi encontrado"));
 
         Tutor tutor = tutorRepositorio.findById(dto.getTutorId())
                 .orElseThrow(() ->
-                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Tutor não encontrado"));
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "o tutor nao foi encontrado"));
 
         pet.setNome(dto.getNome());
         pet.setEspecie(dto.getEspecie());
@@ -78,7 +78,7 @@ public class PetControle {
     public void deletar(@PathVariable Integer id) {
 
         if (!petRepositorio.existsById(id)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet não encontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "o pet nao foi encontrado");
         }
 
         petRepositorio.deleteById(id);

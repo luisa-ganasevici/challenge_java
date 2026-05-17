@@ -90,3 +90,4 @@ public class Tutor {
         this.tipo = tipo;
     }
 }
+//so utilizar se for ter index

@@ -13,18 +13,18 @@ public class Pet {
 
     private Integer id;
 
-    @NotBlank(message = "Nome do pet é obrigatório")
+    @NotBlank(message = "nome do pet é obrigatório")
     private String nome;
 
-    @NotBlank(message = "Espécie é obrigatória")
+    @NotBlank(message = "espécie é obrigatória")
     private String especie;
 
-    @NotNull(message = "Idade é obrigatória")
-    @Min(value = 0, message = "Idade inválida")
+    @NotNull(message = "idade é obrigatória")
+    @Min(value = 0, message = "idade inválida")
     private Integer idade;
 
-    @NotNull(message = "Peso é obrigatório")
-    @Positive(message = "Peso deve ser positivo")
+    @NotNull(message = "peso é obrigatório")
+    @Positive(message = "peso deve ser positivo")
     private Double peso;
 
     @ManyToOne

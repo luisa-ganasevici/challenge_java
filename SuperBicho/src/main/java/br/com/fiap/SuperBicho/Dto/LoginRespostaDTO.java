@@ -53,3 +53,4 @@ public class LoginRespostaDTO {
         this.tipo = tipo;
     }
 }
+//so utilizar se for ter index

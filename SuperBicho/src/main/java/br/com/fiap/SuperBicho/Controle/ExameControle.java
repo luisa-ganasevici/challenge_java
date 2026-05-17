@@ -93,7 +93,7 @@ public class ExameControle {
                                         exameAtualizado.getPet().getId())
                                 .orElseThrow(() ->
                                         new RuntimeException(
-                                                "Pet não encontrado"));
+                                                "pet nao foi encontrado"));
 
                 exame.setPet(petCompleto);
             }
